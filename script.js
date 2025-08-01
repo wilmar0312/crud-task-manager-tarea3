@@ -55,3 +55,10 @@ function editTask(index) {
   editIndex = index;
 }
 
+function deleteAllTasks() {
+  if (confirm('¿Estás seguro de eliminar todas las tareas?')) {
+    localStorage.removeItem('tasks');
+    loadTasks();
+    updateTaskCount(); // si ya tienes esta función
+  }
+}
