@@ -63,3 +63,11 @@ function editTask(index) {
   document.getElementById('task-input').value = tasks[index];
   editIndex = index;
 }
+
+function deleteAllTasks() {
+  if (confirm('¿Estás seguro de eliminar todas las tareas?')) {
+    localStorage.removeItem('tasks');
+    loadTasks();
+    updateTaskCount();
+  }
+}
